@@ -77,7 +77,7 @@ docs =[
 # Information required for building (sdist/wheel)
 [tool.poetry]
 packages = [
-    { include = "google-style-docstrings", from = "src" },
+   { include = "google_style", from = "src" },
 ]
 
 include = [
@@ -88,9 +88,7 @@ include = [
     { path = "src/stubs/*.pyi", format = "sdist" },
     "pyproject.toml",
     "LICENSE",
-    "README.rst",
-    "CONTRIBUTING.md",
-    "CHANGELOG.rst",
+    "README.rst"
 ]
 
 exclude = [

@@ -1,8 +1,8 @@
 
-example_google
---------------
+google_style
+------------
 
-.. automodule:: example_google
+.. automodule:: google_style.example_google
    :members:
    :undoc-members:
    :show-inheritance:
