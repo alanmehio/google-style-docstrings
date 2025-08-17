@@ -1,0 +1,98 @@
+# BUILD
+# Poetry https://python-poetry.org/docs/pyproject/
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "google-style-docstrings"
+version = "0.3.3"
+description = "Google Style Docstrings"
+authors = [
+   {name="Alan"}
+]
+maintainers = [{name="Alan"}] # must be an object
+license = "MIT"
+readme = {file = "README.rst", content-type = "text/x-rst"}
+
+homepage = "https://github.com/alanmehio/google-style-docstrings"
+repository = "https://github.com/alanmehio/google-style-docstrings"
+documentation = "https://google-style-docstrings.readthedocs.io/"
+
+keywords = [
+    "Docstring", "Google Style",
+]
+
+requires-python = ">=3.8"
+
+# Troves classifer see https://pypi.org/classifiers/
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: End Users/Developers",
+    "License :: OSI Approved ::MIT",
+    "Natural Language :: English",
+    "Operating System :: Unix",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: "Documentation",
+]
+
+
+# PyPi url links, that appear in 'Project Links' section
+urls."Bug Tracker" = "https://github.com/alanmehio/google-style-docstrings/issues"
+urls.Documentation = "https://google-style-docstrings.readthedocs.io/"
+urls."Source Code" = "https://github.com/alanmehio/google-style-docstrings"
+
+
+### Dependency Constraints, aka Requirements ###
+# see https://python-poetry.org/docs/dependency-specification/#multiple-constraints-project
+dependencies = [
+]
+
+## optional dependency for test or other purpose 
+## Install in edit mode with the test dependencies 
+## $ pip install -e .  google-style-docstrings[test]
+[project.optional-dependencies]
+test = [
+
+]
+docs =[
+   "Sphinx (<=8.2.3);  python_version >='3.11' and python_version <='3.14'",
+   "sphinx-autodoc-typehints (<=3.2.0); python_version >='3.11' and python_version <='3.14'",
+   "sphinx-rtd-theme (<=3.0.2);  python_version >='3.8' and python_version <='3.14'",
+   "sphinxcontrib-spelling (<=8.0.1);  python_version >='3.10' and python_version <='3.14'",
+   "sphinx-autobuild (==2024.10.3);  python_version >='3.9' and python_version <='3.14'",
+   "sphinx-inline-tabs (==2023.4.21); python_version >='3.8' and python_version <='3.14'",
+   "sphinxcontrib-mermaid (<=1.0.0);  python_version >='3.8' and python_version <='3.14'"
+]
+
+
+# Information required for building (sdist/wheel)
+[tool.poetry]
+packages = [
+    { include = "google-style-docstrings", from = "src" },
+]
+
+include = [
+    { path = "tests", format = "sdist" },
+    { path = "docs/**/*.rst", format = "sdist" },
+    { path = "docs/conf.py", format = "sdist" },
+    { path = "src/**/*.typed", format = "sdist" },
+    { path = "src/stubs/*.pyi", format = "sdist" },
+    "pyproject.toml",
+    "LICENSE",
+    "README.rst",
+    "CONTRIBUTING.md",
+    "CHANGELOG.rst",
+]
+
+exclude = [
+    "docs/*"
+]
