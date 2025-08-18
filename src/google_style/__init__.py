@@ -1,4 +1,4 @@
 """
-Package level documentation ( google_style level) 
+Package level documentation (google_style)
 
 """

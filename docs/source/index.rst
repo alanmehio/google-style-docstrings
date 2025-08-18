@@ -5,7 +5,7 @@ Google Style Docstrings
    :maxdepth: 2
    :caption: API:
 
-   contents/google_style
+   api/google_style
    
 
 Indices and tables
